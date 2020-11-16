@@ -9,7 +9,7 @@ type Gps = {
 type Motion = {
     x: string,
     y: string,
-    z: string,
+    z: boolean,
 }
 export type Report = {
     id: string,
@@ -17,6 +17,6 @@ export type Report = {
     date_uploaded: string,
     battery: Battery,
     gps: Gps,
-    Motion: Motion,
+    motion: Motion,
 }
 export type ReportState = Report;
