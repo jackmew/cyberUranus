@@ -1,15 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, StyleSheet, Text, View, FlatList } from 'react-native';
+import Moment from 'moment';
+import AppList from './AppList';
+import { fetchReport } from "./Api";
+import { ReportState } from "./AppDataType";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const App: React.FC = () => {
+    const [isLoading, setLoading] = useState(true);
+    const [data, setData] = useState<ReportState[]>([]);
+
+    useEffect(() => {
+        setLoading(true);
+        async function getReport() {
+            const data = await fetchReport();
+            setData(data);
+        }
+        getReport();
+        setLoading(false)
+    }, []);
+
+
+    Moment.locale("zh");
+
+    return (
+        <View style={{ flex: 1, padding: 24, backgroundColor: "#f5f5f5" }}>
+            {isLoading ? <ActivityIndicator/> : <AppList data={data} />}
+        </View>
+    );
 }
+export default App;
 
 const styles = StyleSheet.create({
   container: {
