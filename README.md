@@ -1,7 +1,7 @@
 ## CyberUranus - 
 
 ## Api
-API Server: http://167.99.171.123:8080
+API Server: http://167.99.171.123:8080  
 API spec: https://gitlab.com/yenchieh/device-data-receiver (README)
 
 ## Features
@@ -15,10 +15,12 @@ API spec: https://gitlab.com/yenchieh/device-data-receiver (README)
 - [ ] Error handling
 
 ## Run
-`npm run web`  
+`npm run web`     
+
+It's Expo project. You can just eject to run native android & iOS.  
+`npm run eject`  
 `npm run ios`  
-`npm run android`  
-It's Expo project. You can just eject to run native android & iOS.
+`npm run android` 
 
 ## Screenshot  
 ![screenshot](https://github.com/jackmew/cyberUranus/blob/main/screenshot/screenshot1.png?raw=true)  
