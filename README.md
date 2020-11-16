@@ -21,3 +21,4 @@ API spec: https://gitlab.com/yenchieh/device-data-receiver (README)
 It's Expo project. You can just eject to run native android & iOS.
 
 ## Screenshot  
+![screenshot](https://github.com/jackmew/cyberUranus/blob/main/screenshot/screenshot1.png?raw=true)  
